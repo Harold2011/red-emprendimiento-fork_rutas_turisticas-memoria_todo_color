@@ -4,61 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Galeria</title>
+    <title>Galería</title>
     @vite('resources/css/app.css')
-    <style>
-        .background-fixed {
-            background-image: url('{{ asset('storage/img/fondo3.jpg') }}');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
-
-        .overlay {
-            background-color: rgba(50, 50, 50, 0.7);
-        }
-    </style>
 </head>
-<body class="h-screen overflow-hidden">
-    <div class="background-fixed fixed inset-0"></div>
-    <div class="relative w-full h-full overlay">
-        <div class="content relative z-10 h-full overflow-auto">
-            <header class="lg:px-16 px-4 flex flex-wrap items-center py-4">
-                <div class="flex-1 flex justify-between items-center">
+<body class="min-h-screen flex items-center justify-center">
+
+    <!-- Fondo con degradado -->
+    <div class="relative w-full min-h-screen bg-cover bg-center bg-fixed" 
+         style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(50, 50, 50, 0.7));">
+
+        <!-- Contenido de la página -->
+        <div class="content">
+            <header class="lg:px-16 px-4 flex items-center justify-between py-4">
+                
+                <!-- Logo -->
+                <div class="flex items-center">
                     <a href="#" class="text-4xl font-extrabold text-white">
                         <img src="{{ asset('storage/img/logo.png') }}" class="h-20">
                     </a>
                 </div>
-                @include('components/nav_landing')
-            </header>
-            <main>
-                <div class="flex flex-col items-center justify-center w-full mb-20 px-8 md:px-16">
-                    <h1 class="text-2xl font-medium title-font mb-4 text-gray-100 text-center">
-                        Explora la esencia de la aventura, la naturaleza y la cultura a través de nuestra galería: un viaje visual que te conecta con la belleza del mundo y las historias que cada rincón tiene para contar.
-                    </h1>
+                
+                <!-- Menú de navegación -->
+                <div class="hidden lg:flex space-x-8">
+                    @include('components.nav_landing')
                 </div>
+
+                <!-- Iconos de redes sociales -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="https://www.facebook.com/pantagoras.cultura/" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
+                        <ion-icon name="logo-facebook" size="large"></ion-icon> <!-- Tamaño aumentado -->
+                    </a>
+                    <a href="https://www.instagram.com/nature_pantagoras/?__d=11" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
+                        <ion-icon name="logo-instagram" size="large"></ion-icon> <!-- Tamaño aumentado -->
+                    </a>
+                    <a href="https://wa.me/573117034930?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20productos" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
+                        <ion-icon name="logo-whatsapp" size="large"></ion-icon> <!-- Tamaño aumentado -->
+                    </a>
+                </div>
+
+                <!-- Botón de menú móvil -->
+                <div class="lg:hidden flex items-center">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <ion-icon name="menu" size="large"></ion-icon>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Menú móvil desplegable -->
+            <nav id="mobile-menu" class="lg:hidden hidden flex flex-col space-y-2 bg-white/90 p-4 absolute top-16 left-0 right-0 shadow-lg rounded-b-lg">
+                @include('components.nav_landing')
+                <div class="flex space-x-4 pt-4 border-t border-gray-200">
+                    <a href="https://www.facebook.com/pantagoras.cultura/" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
+                        <ion-icon name="logo-facebook" size="large"></ion-icon> <!-- Tamaño aumentado -->
+                    </a>
+                    <a href="https://www.instagram.com/nature_pantagoras/?__d=11" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
+                        <ion-icon name="logo-instagram" size="large"></ion-icon> <!-- Tamaño aumentado -->
+                    </a>
+                    <a href="https://wa.me/573117034930?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20productos" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
+                        <ion-icon name="logo-whatsapp" size="large"></ion-icon> <!-- Tamaño aumentado -->
+                    </a>
+                </div>
+            </nav>
+            
+            <!-- Sección principal de la página -->
+            <div class="flex flex-col items-center justify-center font-bold text-center">
+                <h1 class="text-2xl font-medium title-font mb-4 text-gray-900">
+                    Galerías de eventos
+                </h1>
 
                 <!-- Sección combinada para videos y galería -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-                    <!-- Videos destacados -->
-                    <a href="https://www.youtube.com/watch?v=rdPKvCW2yME" class="relative rounded overflow-hidden shadow-lg">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/rdPKvCW2yME" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=nR9mNvd86B8" class="relative rounded overflow-hidden shadow-lg">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/nR9mNvd86B8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=1pYH6FndU7Q" class="relative rounded overflow-hidden shadow-lg">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/1pYH6FndU7Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=FlVOrEAn9R8" class="relative rounded overflow-hidden shadow-lg">
-                        <iframe class="w-full h-64" src="https://www.youtube.com/embed/FlVOrEAn9R8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </a>
 
                     <!-- Sección de Galería -->
                     @foreach ($gallery as $gallerys)
                     <a href="{{ route('viewGallery', $gallerys->id) }}">
                         <div class="relative rounded overflow-hidden shadow-lg bg-white">
-                            <img src="{{ asset('storage/'.$gallerys->url) }}" alt="Gallery Image">
+                            <img src="{{ asset('storage/'.$gallerys->url) }}" alt="Gallery Image" class="w-full h-48 object-cover">
                             <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white font-roboto font-medium group-hover:bg-opacity-60 transition">
                                 <p class="text-2xl">{{ $gallerys->name }}</p>
                                 <p class="text-lg">{{ $gallerys->description }}</p>
@@ -67,7 +88,7 @@
                     </a>
                     @endforeach
                 </div>
-            </main>
+            </div>
         </div>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
