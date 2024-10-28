@@ -41,7 +41,7 @@
                             </p>
                             <div class="bg-white overflow-auto">
                                 <table class="min-w-full bg-white">
-                                    <thead class="bg-[#34482D] text-white">
+                                    <thead class="bg-[#587ABA] text-white">
                                         <tr>
                                             <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nombre</th>
                                             <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Total</th>

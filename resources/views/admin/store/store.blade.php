@@ -33,7 +33,7 @@
                     </div>
                     <div class="bg-white overflow-auto grid grid-cols-1 gap-4 p-10">
                         <table class="min-w-full bg-white mt-4">
-                            <thead class="bg-[#34482D] text-white">
+                            <thead class="bg-[#587ABA] text-white">
                                 <tr>
                                     <th class="w-1/4 text-left py-3 px-4 uppercase font-semibold text-sm">Nombre</th>
                                     <th class="w-1/4 text-left py-3 px-4 uppercase font-semibold text-sm">Descripción</th>

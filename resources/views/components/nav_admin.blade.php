@@ -1,4 +1,4 @@
-<aside class="relative bg-[#34482D] h-screen w-64 hidden sm:block shadow-xl">
+<aside class="relative bg-[#587ABA] h-screen w-64 hidden sm:block shadow-xl">
     <div class="p-6">
         <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">
             <img src="{{ asset('storage/img/logo.png') }}"/>
