@@ -3,7 +3,7 @@
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('welcome') }}">Inicio</a></li>
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('gallery') }}">Galerías de eventos</a></li>
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('artists') }}">Catalogo de emprendedores</a></li>
-        <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('indexLanding') }}">Rutas</a></li>artists
+        <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('indexLanding') }}">Rutas</a></li>
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('storeUser') }}">Tienda</a></li>
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('contacto.index') }}">Contáctenos</a></li>
         @auth
