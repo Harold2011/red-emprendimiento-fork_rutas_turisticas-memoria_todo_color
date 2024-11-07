@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
     <style>
         .background-fixed {
-            background-image: url('{{ asset('storage/img/fondo.png') }}');
+            background-image: linear-gradient(to bottom right, rgba(255, 212, 128, 0.8), rgba(43, 203, 186, 0.8), rgba(43, 116, 185 , 0.8));
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -43,7 +43,7 @@
                                 <h2 class="title-font font-medium text-lg text-gray-100">{{ $users->name }}</h2>
                                 <h3 class="text-gray-100 mb-3">Biografia</h3>
                                 <p class="mb-4 text-gray-100">{{ $users->description }}</p>
-                                <span class="inline-flex">
+                                <span class="inline-flex space-x-8">
                                     @if(!empty($users->instagram))
                                         <a href="{{ $users->instagram }}" target="_blank" class="text-gray-100">
                                             <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +54,7 @@
                                     @endif
                                     @if(!empty($users->facebook))
                                         <a href="{{ $users->facebook }}" target="_blank" class="text-gray-100">
-                                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5 "  viewBox="0 0 24 24">
                                                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                                             </svg>
                                         </a>
