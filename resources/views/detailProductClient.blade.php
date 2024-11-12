@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
     <style>
         .background-fixed {
-            background-image: url('{{ asset('storage/img/fondo3.jpg') }}');
+            background-image:  linear-gradient(to bottom right, rgba(255, 212, 128, 0.8), rgba(43, 203, 186, 0.8), rgba(43, 116, 185 , 0.8));">
             background-size: cover;
             background-attachment: fixed;
             background-position: center;

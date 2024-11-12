@@ -3,7 +3,6 @@
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('welcome') }}">Inicio</a></li>
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('gallery') }}">Galerías de eventos</a></li>
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('artists') }}">Catalogo de emprendedores</a></li>
-        <!-- <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('indexLanding') }}">Rutas</a></li> -->
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('storeUser') }}">Tienda</a></li>
         <li><a class="md:p-4 py-3 px-0 block text-lg" href="{{ route('contacto.index') }}">Contáctenos</a></li>
         @auth
@@ -20,15 +19,14 @@
         @endauth
     </ul>
     <!-- Menú desplegable para móviles -->
-    <div class="md:hidden relative z-10">
+<div class="md:hidden h-12">
     <button id="menu-toggle" class="text-black focus:outline-none">
         <ion-icon name="menu" size="large"></ion-icon>
     </button>
-    <ul id="mobile-menu" class="lg:hidden hidden flex flex-col space-y-2 bg-white/90 p-4 absolute top-12 left-16 right-0 shadow-lg rounded-lg w-64 h-auto">
+    <ul id="mobile-menu" class="hidden flex flex-col relative z-10 space-y-2 bg-white/90 p-4 absolute shadow-lg rounded-lg w-64 h-auto">
         <li><a class="p-4 block text-lg" href="{{ route('welcome') }}">Inicio</a></li>
         <li><a class="p-4 block text-lg" href="{{ route('gallery') }}">Galería</a></li>
         <li><a class="p-4 block text-lg" href="{{ route('artists') }}">Catalogo</a></li>
-        <!-- <li><a class="p-4 block text-lg" href="{{ route('indexLanding') }}">Rutas</a></li> -->
         <li><a class="p-4 block text-lg" href="{{ route('storeUser') }}">Tienda</a></li>
         <li><a class="p-4 block text-lg" href="{{ route('contacto.index') }}">Contáctenos</a></li>
         @auth
