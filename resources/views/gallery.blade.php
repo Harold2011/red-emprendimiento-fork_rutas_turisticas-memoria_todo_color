@@ -7,68 +7,29 @@
     <title>Galería</title>
     @vite('resources/css/app.css')
 </head>
-<body class="min-h-screen flex items-center justify-center">
+<body class="h-screen overflow-hidden">
 
     <!-- Fondo con degradado -->
-    <div class="relative w-full min-h-screen bg-cover bg-center bg-fixed" 
-         style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(50, 50, 50, 0.7));">
+    <div class="background-fixed fixed inset-0"></div>
+    <div class="relative w-full h-full bg-no-repeat bg-cover bg-center bg-shadow bg-opacity-75"
+         style="background-image: linear-gradient(to bottom right, rgba(255, 212, 128, 0.8), rgba(43, 203, 186, 0.8), rgba(43, 116, 185 , 0.8));">
 
         <!-- Contenido de la página -->
-        <div class="content">
+        <div class="content relative z-10 h-full overflow-auto">
             <header class="lg:px-16 px-4 flex items-center justify-between py-4">
                 
                 <!-- Logo -->
-                <div class="flex items-center">
+                <div class="flex-1 flex justify-between items-center">
                     <a href="#" class="text-4xl font-extrabold text-white">
                         <img src="{{ asset('storage/img/logo.png') }}" class="h-20">
                     </a>
                 </div>
-                
-                <!-- Menú de navegación -->
-                <div class="hidden lg:flex space-x-8">
-                    @include('components.nav_landing')
-                </div>
-
-                <!-- Iconos de redes sociales -->
-                <div class="hidden lg:flex items-center space-x-4">
-                    <a href="https://www.facebook.com/pantagoras.cultura/" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
-                        <ion-icon name="logo-facebook" size="large"></ion-icon> <!-- Tamaño aumentado -->
-                    </a>
-                    <a href="https://www.instagram.com/nature_pantagoras/?__d=11" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
-                        <ion-icon name="logo-instagram" size="large"></ion-icon> <!-- Tamaño aumentado -->
-                    </a>
-                    <a href="https://wa.me/573117034930?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20productos" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
-                        <ion-icon name="logo-whatsapp" size="large"></ion-icon> <!-- Tamaño aumentado -->
-                    </a>
-                </div>
-
-                <!-- Botón de menú móvil -->
-                <div class="lg:hidden flex items-center">
-                    <button id="menu-toggle" class="text-white focus:outline-none">
-                        <ion-icon name="menu" size="large"></ion-icon>
-                    </button>
-                </div>
+                @include('components/nav_landing')
             </header>
 
-            <!-- Menú móvil desplegable -->
-            <nav id="mobile-menu" class="lg:hidden hidden flex flex-col space-y-2 bg-white/90 p-4 absolute top-16 left-0 right-0 shadow-lg rounded-b-lg">
-                @include('components.nav_landing')
-                <div class="flex space-x-4 pt-4 border-t border-gray-200">
-                    <a href="https://www.facebook.com/pantagoras.cultura/" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
-                        <ion-icon name="logo-facebook" size="large"></ion-icon> <!-- Tamaño aumentado -->
-                    </a>
-                    <a href="https://www.instagram.com/nature_pantagoras/?__d=11" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
-                        <ion-icon name="logo-instagram" size="large"></ion-icon> <!-- Tamaño aumentado -->
-                    </a>
-                    <a href="https://wa.me/573117034930?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20productos" target="_blank" class="no-underline px-2 bg-white/50 rounded-full">
-                        <ion-icon name="logo-whatsapp" size="large"></ion-icon> <!-- Tamaño aumentado -->
-                    </a>
-                </div>
-            </nav>
-            
             <!-- Sección principal de la página -->
             <div class="flex flex-col items-center justify-center font-bold text-center">
-                <h1 class="text-2xl font-medium title-font mb-4 text-gray-900">
+                <h1 class="text-2xl font-medium title-font mb-4 text-white">
                     Galerías de eventos
                 </h1>
 
