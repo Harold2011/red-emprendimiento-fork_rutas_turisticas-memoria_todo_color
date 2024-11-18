@@ -118,7 +118,7 @@
                 </div>
             </main>
             <footer class="w-full bg-white text-right p-4">
-                <a target="_blank" href="" class="underline">Memoria todo color 2024.</a>.
+                <a target="_blank" href="" class="underline">Red de emprendimento del oriente antioqueño 2024.</a>.
             </footer>
         </div>
         

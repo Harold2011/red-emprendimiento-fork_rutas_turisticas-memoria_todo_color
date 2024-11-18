@@ -8,18 +8,18 @@
     @vite('resources/css/app.css')
     <style>
         @keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-}
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
 
-.icon-bounce {
-    animation: float 2s ease-in-out infinite;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
-}
+        .icon-bounce {
+            animation: float 2s ease-in-out infinite;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+        }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center">
@@ -30,40 +30,51 @@
 
         <!-- Contenido de la página -->
         <div class="content">
-            <header class="lg:px-16 px-4 flex items-center justify-between py-4">
+            <header class="lg:px-16 px-4 flex items-center justify-between py-4 bg-white/90 p-4 rounded-lg shadow-lg border border-gray-200 mx-4">
                 
                 <!-- Logo -->
                 <div class="flex-1 flex justify-between items-center">
-                    <a href="#" class="text-4xl font-extrabold text-white">
+                    <a href="#" class="text-4xl font-extrabold text-[#2e4053]">
                         <img src="{{ asset('storage/img/logo.png') }}" class="h-20">
                     </a>
                 </div>
-                @include('components/nav_landing')
+                
+                <!-- Menú en recuadro -->
+                <div class="flex items-center space-x-4">
+                    @include('components/nav_landing')
+                </div>
             </header>
             
             <!-- Sección principal de la página -->
-            <div class="flex items-center justify-center h-[calc(90vh-4rem)]"> <!-- Cambia h-full a h-[calc(100vh-4rem)] para evitar que el texto se superponga al header -->
-                <div class="lg:w-[30%] text-center">
-                    <div class="sm:text-6xl xs:text-5xl text-black uppercase font-bold">
-                        <h1 class="font-mono">RED DE EMPRENDIMIENTO DEL ORIENTE ANTIOQUEÑO.</h1>
-                    </div>
+            <div class="flex items-center justify-center h-[calc(90vh-4rem)]">
+                <div class="lg:w-[30%] text-center bg-white/90 p-8 rounded-lg shadow-lg border border-gray-200">
+                    <h1 class="sm:text-5xl xs:text-4xl text-[#2e4053] uppercase font-bold font-mono">
+                        RED DE EMPRENDIMIENTO DEL ORIENTE ANTIOQUEÑO
+                    </h1>
 
-                    <div class="flex items-center justify-center space-x-8 pt-4 mt-16">
-                        <a href="https://www.facebook.com/pantagoras.cultura/" target="_blank" class="icon-bounce no-underline px-2 bg-white/50 rounded-full flex items-center justify-center aspect-square w-12 h-12">
-                            <ion-icon name="logo-facebook" size="large" style="color: #1877F2;"></ion-icon>
-                        </a>
-                        <a href="https://www.instagram.com/nature_pantagoras/?__d=11" target="_blank" class="icon-bounce no-underline px-2 bg-white/50 rounded-full flex items-center justify-center aspect-square w-12 h-12">
-                            <ion-icon name="logo-instagram" size="large" style="color: #C13584;"></ion-icon>
-                        </a>
-                        <a href="https://wa.me/573117034930?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20productos" target="_blank" class="icon-bounce no-underline px-2 bg-white/50 rounded-full flex items-center justify-center aspect-square w-12 h-12">
-                            <ion-icon name="logo-whatsapp" size="large" style="color: #25D366;"></ion-icon>
-                        </a>
+                    <!-- Iconos de redes sociales -->
+                    <div class="flex items-center justify-center space-x-8 pt-6 mt-8">
+                        @if(!empty($user->facebook))
+                            <a href="{{ $user->facebook }}" target="_blank" class="icon-bounce no-underline px-2 bg-white/50 rounded-full flex items-center justify-center aspect-square w-12 h-12">
+                                <ion-icon name="logo-facebook" size="large" style="color: #1877F2;"></ion-icon>
+                            </a>
+                        @endif
+                        @if(!empty($user->instagram))
+                            <a href="{{ $user->instagram }}" target="_blank" class="icon-bounce no-underline px-2 bg-white/50 rounded-full flex items-center justify-center aspect-square w-12 h-12">
+                                <ion-icon name="logo-instagram" size="large" style="color: #C13584;"></ion-icon>
+                            </a>
+                        @endif
+                        @if(!empty($user->whatsapp))
+                            <a href="https://wa.me/{{ $user->whatsapp }}?text=Quiero saber más sobre la red de emprendimiento del oriente de Antioquia" target="_blank" class="icon-bounce no-underline px-2 bg-white/50 rounded-full flex items-center justify-center aspect-square w-12 h-12">
+                                <ion-icon name="logo-whatsapp" size="large" style="color: #25D366;"></ion-icon>
+                            </a>
+                        @endif
                     </div>
-                
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Scripts de Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

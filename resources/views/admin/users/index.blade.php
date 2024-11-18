@@ -28,7 +28,7 @@
                     </div>
                     <div class="bg-white overflow-auto grid grid-cols-1 gap-4 p-10">
                         <table class="min-w-full bg-white">
-                            <thead class="bg-[#34482D] text-white">
+                            <thead class="bg-[#587ABA] text-white">
                                 <tr>
                                     <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nombre</th>
                                     <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Correo</th>
@@ -38,29 +38,30 @@
                             </thead>
                             <tbody class="text-gray-700">
                                 @foreach ($users as $user)
-                                    <tr>
-                                        <td class="w-1/3 text-left py-3 px-4">{{ $user->name }}</td>
-                                        <td class="w-1/3 text-left py-3 px-4">{{ $user->email }}</td>
-                                        <td class="text-left py-3 px-4">
-                                            @foreach ($user->roles as $role)
-                                                {{ $role->name }}
-                                            
-                                        </td>
-                                        <td class="text-left py-3 px-4">
-                                            @if($role->id == 3)
-                                                <form action="{{ route('usersMakeUser', $user->id) }}" method="POST">
-                                                    @csrf
-                                                    <button type="submit" class="w-full bg-[#34482D] text-white font-semibold py-2 rounded-lg shadow-lg hover:bg-[#078C03] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Convertir en Usuario</button>
-                                                </form>
-                                            @else
-                                                <form action="{{ route('usersMakeArtist', $user->id) }}" method="POST">
-                                                    @csrf
-                                                    <button type="submit" class="w-full bg-[#34482D] text-white font-semibold py-2 rounded-lg shadow-lg hover:bg-[#078C03] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Convertir en Artista</button>
-                                                </form>
-                                            @endif
-                                            @endforeach
-                                        </td>
-                                    </tr>
+                                    @foreach ($user->roles as $role)
+                                        @if($role->name != 'admin')
+                                            <tr>
+                                                <td class="w-1/3 text-left py-3 px-4">{{ $user->name }}</td>
+                                                <td class="w-1/3 text-left py-3 px-4">{{ $user->email }}</td>
+                                                <td class="text-left py-3 px-4">
+                                                    {{ $role->name }}
+                                                </td>
+                                                <td class="text-left py-3 px-4">
+                                                    @if($role->id == 4)
+                                                        <form action="{{ route('usersMakeUser', $user->id) }}" method="POST">
+                                                            @csrf
+                                                            <button type="submit" class="w-full bg-[#587ABA] text-white font-semibold py-2 rounded-lg shadow-lg hover:bg-[#07DBF2] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Convertir en Usuario</button>
+                                                        </form>
+                                                    @else
+                                                        <form action="{{ route('usersMakeEntrepreneur', $user->id) }}" method="POST">
+                                                            @csrf
+                                                            <button type="submit" class="w-full bg-[#587ABA] text-white font-semibold py-2 rounded-lg shadow-lg hover:bg-[#07DBF2] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Convertir en Emprendedor</button>
+                                                        </form>
+                                                </td>
+                                            </tr>
+                                        @endif
+                                    @endif
+                                    @endforeach
                                 @endforeach
                             </tbody>
                         </table>
@@ -68,7 +69,7 @@
                 </div>
             </main>
             <footer class="w-full bg-white text-right p-4">
-                <a target="_blank" href="" class="underline">Pantágoras 2024.</a>.
+                <a target="_blank" href="" class="underline">Red de emprendimento del oriente antioqueño 2024.</a>.
             </footer>
         </div>
     </div>

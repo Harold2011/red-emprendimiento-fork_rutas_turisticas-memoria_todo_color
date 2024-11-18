@@ -14,9 +14,7 @@ use App\Http\Controllers\personaldataController;
 
 
 //rutas inicio
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingController::class, 'welcome'])->name('/');
 Route::get('/welcome', [LandingController::class, 'welcome'])->name('welcome');
 
 //rutas app
@@ -28,7 +26,7 @@ Route::get('/gallery/{id}', [LandingController::class, 'viewGallery'])->name('vi
 
 
 //rutas artistas
-Route::get('/artists', [LandingController::class, 'viewartists'])->name('artists');
+Route::get('/Entrepreneur', [LandingController::class, 'viewEntrepreneur'])->name('entrepreneur');
 
 //ruta tienda
 Route::get('/storeUser', [LandingController::class, 'store'])->name('storeUser');
@@ -54,6 +52,9 @@ Route::get('/contactoIndex', [menssajeController::class, 'index'])->name('contac
 Route::get('indexLanding', [routesController::class, 'indexLanding'])->name('indexLanding');
 Route::get('/routes/{id}', [routesController::class, 'show'])->name('routes.show');
 
+//ruta info
+Route::get('/info', [LandingController::class, 'info'])->name('info');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -78,7 +79,7 @@ Route::middleware([
 
     //rutas de usuarios
     Route::get('/users', [UserController::class, 'index'])->name('usersIndex');
-    Route::post('/users/make-artist/{id}', [UserController::class, 'makeArtist'])->name('usersMakeArtist');
+    Route::post('/users/make-entrepreneur/{id}', [UserController::class, 'makeEntrepreneur'])->name('usersMakeEntrepreneur');
     Route::post('/users/make-user/{id}', [UserController::class, 'makeUser'])->name('usersMakeUser');
 
    // Rutas tienda

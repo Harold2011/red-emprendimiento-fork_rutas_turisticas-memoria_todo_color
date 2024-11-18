@@ -33,6 +33,7 @@ class personaldataController extends Controller
         $user->instagram = $request->input('instagram');
         $user->facebook = $request->input('facebook');
         $user->youtube = $request->input('youtube');
+        $user->whatsapp = $request->input('whatsapp');
         $user->description = $request->input('description'); 
         $user->save();
     

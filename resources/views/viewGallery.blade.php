@@ -10,12 +10,6 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
-        .background-fixed {
-            background-image: linear-gradient(to bottom right, rgba(255, 212, 128, 0.8), rgba(43, 203, 186, 0.8), rgba(43, 116, 185 , 0.8));">
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
         .image-container img {
             max-width: 100%;
             max-height: 100%;
@@ -34,25 +28,28 @@
         }
 
         .overlay {
-            background-color: rgba(50, 50, 50, 0.7);
+            background-color: rgba(75, 75, 75, 0.7);
         }
     </style>
 </head>
 <body class="h-screen overflow-hidden" x-data="{ showModal: false, modalImage: '' }">
     <div class="background-fixed fixed inset-0"></div>
-    <div class="relative w-full h-full bg-no-repeat bg-cover bg-center overlay"> <!-- Aplicamos la overlay aquí -->
+    <div class="relative w-full h-full bg-no-repeat bg-cover bg-center overlay"
+         style="background-image: linear-gradient(to bottom right, rgba(43, 116, 185 , 0.8), rgba(255, 255, 255, 0.8));">
         <div class="content relative z-10 h-full overflow-auto">
-            <header class="lg:px-16 px-4 flex flex-wrap items-center py-4">
+            <!-- Menú con recuadro -->
+            <header class="lg:px-16 px-4 flex flex-wrap items-center py-4 bg-white/90 p-4 rounded-lg shadow-lg border border-gray-200 mx-4">
                 <div class="flex-1 flex justify-between items-center">
-                    <a href="#" class="text-4xl font-extrabold text-white">
+                    <a href="#" class="text-4xl font-extrabold text-[#2e4053]">
                         <img src="{{ asset('storage/img/logo.png') }}" class="h-20">
                     </a>
                 </div>
                 @include('components.nav_landing')
             </header>
+
             <main>
                 <div class="overflow-auto grid grid-cols-2 gap-4 p-10">
-                    <a href="{{ route('gallery')}}"><button class="p-10 bg-[#34482D] text-white font-semibold py-2 rounded-lg shadow-lg hover:bg-[#078C03] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <a href="{{ route('gallery')}}"><button class="p-10 bg-[#587ABA] text-white font-semibold py-2 rounded-lg shadow-lg hover:bg-[#07DBF2] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         <i class="fas fa-arrow-alt-circle-left mr-3"></i> Regresar
                     </button></a>
                 </div>

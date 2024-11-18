@@ -14,10 +14,10 @@
                 <i class="fas fa-images mr-3"></i>
                 Galeria
             </a>
-            <a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
+            <!--<a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
                 <i class="fas fa-shopping-cart mr-3"></i>
                 Tienda
-            </a>
+            </a>-->
             <a href="{{ route('indexMessage') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
                 <i class="fas fa-envelope mr-3"></i>
                 Mensajes
@@ -36,24 +36,24 @@
                 <i class="fas fa-user mr-3"></i>
                 Actualizar datos
             </a>
-            <a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
+            <!--<a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
                 <i class="fas fa-shopping-cart mr-3"></i>
                 Compra
-            </a>
+            </a>-->
             <a href="{{ route('welcome') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6">
                 <i class="fas fa-globe mr-3"></i>
                 Regresar a la web
             </a>
         @endrole
-        @role('artista')
+        @role('Emprendedor')
         <a href="{{ route('personal.edit', Auth::user()->id) }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-user mr-3"></i>
                 Actualizar datos
             </a>
-            <a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <!--<a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-shopping-cart mr-3"></i>
                 Compras
-            </a>
+            </a>-->
             <a href="{{ route('welcome') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-globe mr-3"></i>
                 Regresar a la web

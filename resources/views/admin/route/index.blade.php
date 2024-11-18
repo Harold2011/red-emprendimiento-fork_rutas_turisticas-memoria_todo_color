@@ -1,5 +1,5 @@
-<!-- resources/views/admin/store/ordersProduct.blade.php -->
-<!-- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -85,7 +85,7 @@
                 </div>
             </main>
             <footer class="w-full bg-white text-right p-4">
-                <a target="_blank" href="" class="underline">Pantágoras 2024.</a>.
+                <a target="_blank" href="" class="underline">Red de emprendimento del oriente antioqueño 2024.</a>.
             </footer>
         </div>
     </div>
@@ -96,4 +96,4 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
 </body>
-</html> -->
+</html>

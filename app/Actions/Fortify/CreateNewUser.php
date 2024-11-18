@@ -28,6 +28,7 @@ class CreateNewUser implements CreatesNewUsers
             'instagram' => ['nullable', 'string', 'max:255'],
             'facebook' => ['nullable', 'string', 'max:255'],
             'youtube' => ['nullable', 'string', 'max:255'],
+            'whatsapp' => ['nullable', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:500'],
         ])->validate();
         
@@ -40,6 +41,7 @@ class CreateNewUser implements CreatesNewUsers
             'instagram' => $input['instagram'],
             'facebook' => $input['facebook'],
             'youtube' => $input['youtube'],
+            'whatsapp' => $input['whatsapp'],
             'description' => $input['description'],
         ]);
         if (isset($input['profile_photo'])) {

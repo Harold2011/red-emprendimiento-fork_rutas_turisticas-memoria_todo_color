@@ -68,6 +68,12 @@
                         <x-input id="youtube" class="block mt-1 w-full bg-gray-200 focus:border-green-500 focus:ring-green-500" type="text" name="youtube" :value="old('youtube')" autocomplete="youtube" />
                     </div>
 
+                     <!-- Campo whatsapp -->
+                     <div class="col-span-1">
+                        <x-label for="whatsapp" value="{{ __('Whatsapp') }}" class="" />
+                        <x-input id="whatsapp" class="block mt-1 w-full bg-gray-200 focus:border-green-500 focus:ring-green-500" type="text" name="whatsapp" :value="old('whatsapp')" autocomplete="whatsapp" />
+                    </div>
+
                     <!-- Términos y Condiciones (opcional) -->
                     @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                         <div class="col-span-2">

@@ -6,10 +6,10 @@
         </button>
         <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button>
         <div x-show="isOpen" class="absolute max-w-auto bg-white rounded-lg shadow-lg py-2 mt-16">
-            <a href="{{ route('personal.edit', Auth::user()->id) }}" class="block text-sm px-4 py-2 account-link hover:bg-[#34482D] hover:text-white">Actualizar datos</a>
+            <a href="{{ route('personal.edit', Auth::user()->id) }}" class="block text-sm px-4 py-2 account-link hover:bg-[#587ABA] hover:text-white">Actualizar datos</a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <a class="block text-sm px-4 py-2 account-link hover:bg-[#34482D] hover:text-white"><button>Cerrar sesión</button></a>
+                <a class="block text-sm px-4 py-2 account-link hover:bg-[#587ABA] hover:text-white"><button>Cerrar sesión</button></a>
             </form>
         </div>
     </div>
@@ -36,10 +36,10 @@
                 <i class="fas fa-images mr-3"></i>
                 Galeria
             </a>
-            <a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <!--<a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-shopping-cart mr-3"></i>
                 Tienda
-            </a>
+            </a>-->
 
             <a href="{{ route('indexMessage') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-envelope mr-3"></i>
@@ -59,24 +59,24 @@
                 <i class="fas fa-user mr-3"></i>
                 Actualizar datos
             </a>
-            <a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <!--<a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-shopping-cart mr-3"></i>
                 Compras
-            </a>
+            </a>-->
             <a href="{{ route('welcome') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-globe mr-3"></i>
                 Regresar a la web
             </a>
         @endrole
-        @role('artista')
+        @role('Emprendedor')
         <a href="{{ route('personal.edit', Auth::user()->id) }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-user mr-3"></i>
                 Actualizar datos
             </a>
-            <a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <!--<a href="{{ route('storeNav') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-shopping-cart mr-3"></i>
                 Compras
-            </a>
+            </a>-->
             <a href="{{ route('welcome') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-globe mr-3"></i>
                 Regresar a la web

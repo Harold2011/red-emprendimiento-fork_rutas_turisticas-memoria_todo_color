@@ -63,8 +63,12 @@
                                     <label for="youtube" class="block text-sm font-medium text-gray-700">Youtube</label>
                                     <input type="text" id="youtube" name="youtube" value="{{ $user->youtube }}" maxlength="200" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 </div>
+                                <div class="mb-4">
+                                    <label for="whatsapp" class="block text-sm font-medium text-gray-700">Whatsapp</label>
+                                    <input type="number" id="whatsapp" name="whatsapp" value="{{ $user->whatsapp }}" maxlength="200" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                </div>
                                 <div>
-                                    <button type="submit" class="w-full bg-[#34482D] text-white font-semibold py-2 rounded-lg shadow-lg hover:bg-[#078C03] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    <button type="submit" class="w-full bg-[#587ABA] text-white font-semibold py-2 rounded-lg shadow-lg hover:bg-[#07DBF2] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                         Actualizar
                                     </button>
                                 </div>
@@ -74,7 +78,7 @@
                 </div>
             </main>
             <footer class="w-full bg-white text-right p-4">
-                <a target="_blank" href="" class="underline">Pantágoras 2024.</a>.
+                <a target="_blank" href="" class="underline">Red de emprendimento del oriente antioqueño 2024.</a>.
             </footer>
         </div>
     </div>

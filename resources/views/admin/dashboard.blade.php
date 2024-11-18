@@ -25,40 +25,16 @@
             <main class="w-full flex-grow p-6">
                 <h1 class="text-3xl text-black pb-6">Panel de control, Bienvenido {{Auth::user()->name}}</h1>
                 @role('admin')
-                    <div class="flex flex-wrap mt-6">
-                        <div class="w-full lg:w-1/2 pr-0 lg:pr-2">
-                            <p class="text-xl pb-3 flex items-center">
-                                <i class="fas fa-chart-bar mr-3"></i> Interacciones por Producto
-                            </p>
-                            <div class="p-6 bg-white">
-                                <canvas id="salesChart" width="400" height="200"></canvas>
-                            </div>
-                        </div>
-                        
-                        <div class="w-full lg:w-1/2 pl-0 lg:pl-2 mt-6 lg:mt-0">
-                            <p class="text-xl pb-3 flex items-center">
-                                <i class="fas fa-list mr-3"></i> Lista de Interacciones
-                            </p>
-                            <div class="bg-white overflow-auto">
-                                <table class="min-w-full bg-white">
-                                    <thead class="bg-[#587ABA] text-white">
-                                        <tr>
-                                            <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Nombre</th>
-                                            <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-gray-700">
-                                        @foreach ($productInteraction as $product)
-                                        <tr>
-                                            <td class="w-1/3 text-left py-3 px-4">{{ $product->product_name }}</td>
-                                            <td class="text-left py-3 px-4">{{ $product->total_count }}</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                <div class="flex flex-wrap mt-6 justify-center">
+                    <div class="w-full lg:w-1/2">
+                        <div class="relative">
+                            <img src="{{ asset('storage/img/background.jpg') }}" alt="Banner" class="w-full h-auto object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-gray-700 bg-opacity-50 flex items-center justify-center rounded-lg">
+                                <h2 class="text-white text-3xl font-bold">Bienvenido a la red de emprendimento del oriente antioqueño.</h2>
                             </div>
                         </div>
                     </div>
+                </div>
                 @endrole
                 @role('user')
                 <div class="flex flex-wrap mt-6 justify-center">
@@ -66,19 +42,19 @@
                         <div class="relative">
                             <img src="{{ asset('storage/img/background.jpg') }}" alt="Banner" class="w-full h-auto object-cover rounded-lg">
                             <div class="absolute inset-0 bg-gray-700 bg-opacity-50 flex items-center justify-center rounded-lg">
-                                <h2 class="text-white text-3xl font-bold">Bienvenido a pantágoras.</h2>
+                                <h2 class="text-white text-3xl font-bold">Bienvenido a la red de emprendimento del oriente antioqueño.</h2>
                             </div>
                         </div>
                     </div>
                 </div>
                 @endrole
-                @role('artista')
+                @role('Emprendedor')
                 <div class="flex flex-wrap mt-6 justify-center">
                     <div class="w-full lg:w-1/2">
                         <div class="relative">
                             <img src="{{ asset('storage/img/background.jpg') }}" alt="Banner" class="w-full h-auto object-cover rounded-lg">
                             <div class="absolute inset-0 bg-gray-700 bg-opacity-50 flex items-center justify-center rounded-lg">
-                                <h2 class="text-white text-3xl font-bold">Bienvenido a pantágoras.</h2>
+                                <h2 class="text-white text-3xl font-bold">Bienvenido a la red de emprendimento del oriente antioqueño.</h2>
                             </div>
                         </div>
                     </div>
@@ -89,7 +65,7 @@
 
             <!-- Footer -->
             <footer class="w-full bg-white text-right p-4">
-                <a target="_blank" href="" class="underline">Pantágoras 2024.</a>
+                <a target="_blank" href="" class="underline">Red de emprendimento del oriente antioqueño 2024.</a>
             </footer>
         </div>
     </div>
